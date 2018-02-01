@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import app.cleaningmaintenanceservices.R;
-import app.cleaningmaintenanceservices.user.activity.UserMain;
+import app.cleaningmaintenanceservices.user.activity.Profile;
 
 public class Splash extends AppCompatActivity {
 
@@ -19,7 +19,8 @@ public class Splash extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(Splash.this, UserMain.class));
+                startActivity(new Intent(Splash.this, Profile.class));
+                finish();
             }
         },3000);
     }

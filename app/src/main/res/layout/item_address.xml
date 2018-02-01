@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:paddingTop="10dp">
+
+    <RelativeLayout
+        android:id="@+id/itemAddressLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/outline_gray">
+
+        <TextView
+            android:id="@+id/itemAddressTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Address 1"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/itemEditAddress"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_alignTop="@+id/itemAddressTitle"
+            android:layout_marginEnd="30dp"
+            android:layout_toStartOf="@+id/itemAddressDelete"
+            android:background="@drawable/ic_edit_gray" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_below="@+id/itemAddressTitle"
+            android:background="@color/gray" />
+
+        <ImageView
+            android:id="@+id/itemAddressDelete"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:src="@drawable/ic_close_white"
+            android:tint="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/itemAddressDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/itemAddressTitle"
+            android:layout_margin="@dimen/_10sdp"
+            android:text="lorem ispsum"
+            android:textSize="@dimen/_11sdp" />
+
+    </RelativeLayout>
+</FrameLayout>

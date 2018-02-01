@@ -54,4 +54,5 @@ dependencies {
     compile 'com.theartofdev.edmodo:android-image-cropper:2.5.+'
     compile 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
     compile 'com.intuit.sdp:sdp-android:1.0.5'
+    compile 'com.ramotion.foldingcell:folding-cell:1.2.1'
 }

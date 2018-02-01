@@ -13,7 +13,6 @@
         android:orientation="vertical">
 
         <include layout="@layout/content_user_main" />
-        <!--Place your content here-->
 
     </LinearLayout>
 

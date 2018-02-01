@@ -1,4 +1,4 @@
-package app.cleaningmaintenanceservices.user.Adapter;
+package app.cleaningmaintenanceservices.user.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 

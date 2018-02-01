@@ -1,5 +1,6 @@
 package app.cleaningmaintenanceservices.user.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -28,6 +29,7 @@ public class UserMain extends AppCompatActivity
     ViewPager viewPager;
     LinearLayout indicatorDotsLinearLayout;
     private ImageView[] indicatorDots;
+    int imagesCounter = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,20 +62,17 @@ public class UserMain extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+
         getMenuInflater().inflate(R.menu.user_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_search) {
             return true;
         }
 
@@ -83,21 +82,41 @@ public class UserMain extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        switch (id){
+            case R.id.user_nav_home:
+                break;
 
-        } else if (id == R.id.nav_slideshow) {
+            case R.id.user_nav_history:
+                break;
 
-        } else if (id == R.id.nav_manage) {
+            case R.id.user_nav_address_book:
 
-        } else if (id == R.id.nav_share) {
+                Intent intent = new Intent(this,AddressBook.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
 
-        } else if (id == R.id.nav_send) {
+                break;
 
+            case R.id.user_nav_notification:
+                break;
+
+            case R.id.user_nav_profile:
+                break;
+
+            case R.id.user_nav_testimonial:
+                break;
+
+            case R.id.user_nav_faq:
+                break;
+
+            case R.id.user_nav_terms_condition:
+                break;
+
+            case R.id.user_nav_about:
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

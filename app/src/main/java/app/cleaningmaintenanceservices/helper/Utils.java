@@ -17,6 +17,7 @@ import app.cleaningmaintenanceservices.R;
 public class Utils {
 
     public static String webUrl;
+    public static String token = "";
 
     public static void loadImg(Context context, ImageView imageView, String path, boolean wide, boolean fullSize) {
 

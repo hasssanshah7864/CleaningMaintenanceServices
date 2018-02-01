@@ -5,34 +5,49 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/user_nav_home"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:title="@string/home" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/user_nav_history"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:title="@string/history" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/user_nav_address_book"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:title="@string/address_book" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/user_nav_notification"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="@string/notification" />
+        <item
+            android:id="@+id/user_nav_profile"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/profile" />
     </group>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
+    <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/user_nav_testimonial"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/testimonial" />
+        <item
+            android:id="@+id/user_nav_faq"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/faq" />
+        <item
+            android:id="@+id/user_nav_terms_condition"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/term_and_condition" />
+        <item
+            android:id="@+id/user_nav_about"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/about" />
+    </group>
+
+
 
 </menu>
