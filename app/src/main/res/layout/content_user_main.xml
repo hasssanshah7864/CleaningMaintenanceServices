@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="app.cleaningmaintenanceservices.user.activity.UserMain"
+    tools:context="app.cleaningmaintenanceservices.user.activity.UserHome"
     tools:showIn="@layout/app_bar_user_main">
 
     <RelativeLayout
@@ -21,9 +21,9 @@
         <LinearLayout
             android:id="@+id/userMainViewpagerpagerDotsIndicator"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp"
             android:background="@android:color/transparent"
             android:gravity="center_horizontal"
             android:orientation="horizontal">
@@ -50,18 +50,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_margin="@dimen/_10sdp"
             android:gravity="center">
-            <ImageView
+            <com.github.siyamed.shapeimageview.CircularImageView
                 android:layout_width="@dimen/_90sdp"
                 android:layout_height="@dimen/_90sdp"
-                android:background="@color/colorPrimary"/>
+                android:src="@drawable/maintenance"/>
 
             <TextView
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/_12sdp"
+                android:textSize="@dimen/_14sdp"
                 android:text="@string/maintenance" />
         </LinearLayout>
 
@@ -69,10 +69,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_margin="@dimen/_10sdp"
             android:gravity="center">
-            <ImageView
-                android:background="@color/colorPrimary"
+
+
+            <com.github.siyamed.shapeimageview.CircularImageView
+                android:src="@drawable/cleaning"
                 android:layout_width="@dimen/_90sdp"
                 android:layout_height="@dimen/_90sdp" />
 
@@ -80,7 +82,7 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/_12sdp"
+                android:textSize="@dimen/_14sdp"
                 android:text="@string/cleaning" />
         </LinearLayout>
     </LinearLayout>

@@ -13,6 +13,7 @@
     <color name="black">#000000</color>
 
     <color name="gray">#bbbbbb</color>
+    <color name="dark_gray">#838383</color>
 
     <color name="yellow">#f7d30d</color>
 </resources>

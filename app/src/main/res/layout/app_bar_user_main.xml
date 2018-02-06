@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="app.cleaningmaintenanceservices.user.activity.UserMain">
+    tools:context="app.cleaningmaintenanceservices.user.activity.UserHome">
 
     <LinearLayout
         android:id="@+id/your_content"
@@ -13,7 +13,6 @@
         android:orientation="vertical">
 
         <include layout="@layout/content_user_main" />
-        <!--Place your content here-->
 
     </LinearLayout>
 

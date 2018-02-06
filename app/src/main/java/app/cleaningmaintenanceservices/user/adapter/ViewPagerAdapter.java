@@ -1,4 +1,4 @@
-package app.cleaningmaintenanceservices.user.Adapter;
+package app.cleaningmaintenanceservices.user.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -36,7 +34,7 @@ public class ViewPagerAdapter extends PagerAdapter {
 
         final ImageView image = itemView.findViewById(R.id.image_view);
 
-        Utils.loadImg(context, image, data.get(position), false, false);
+        Utils.loadImg(context, image, data.get(position), true, true);
 
         container.addView(itemView);
 
@@ -54,5 +52,10 @@ public class ViewPagerAdapter extends PagerAdapter {
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
         return view == ((LinearLayout) object);
+    }
+
+    @Override
+    public void destroyItem(ViewGroup container, int position, Object object) {
+        container.removeView((LinearLayout)object);
     }
 }

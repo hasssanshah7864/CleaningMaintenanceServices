@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.cleaningmaintenanceservices.user.activity.AddressBook">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/actAddAddress">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:paddingLeft="@dimen/_50sdp"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_13sdp"
+            android:text="@string/address_book"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20sdp"
+            android:id="@+id/textView" />
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_above="@+id/actAddressBookList"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/arrow_back" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/actAddressBookList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView" />
+    </RelativeLayout>
+
+
+
+    <Button
+        android:id="@+id/actAddAddress"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/button"
+        android:text="@string/add_address"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp"/>
+
+</RelativeLayout>

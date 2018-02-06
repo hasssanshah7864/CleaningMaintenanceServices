@@ -2,20 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.cleaningmaintenanceservices">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <supports-screens
-        android:anyDensity="true"
-        android:largeScreens="true"
-        android:normalScreens="true"
-        android:resizeable="true"
-        android:smallScreens="true"
-        android:xlargeScreens="true" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,23 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".common.activity.Splash" />
-        <activity
-            android:name=".user.activity.UserMain"
-            android:label="@string/title_activity_user_main"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".common.activity.Login"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".user.activity.RegisterCompany"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".owner.activity.OwnerHome"
-            android:label="@string/title_activity_owner_home"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme">
+        <activity android:name=".common.activity.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,46 +17,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".owner.activity.MangeCleaners"
-            android:screenOrientation="portrait">
-
-        </activity>
-        <activity
-            android:name=".owner.activity.AddCleaner"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".owner.activity.Reviews"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".owner.activity.Clients"
-            android:screenOrientation="portrait">
-
-        </activity>
-        <activity
-            android:name=".owner.activity.ClientDetail"
-            android:screenOrientation="portrait">
-
-        </activity>
-        <activity
-            android:name=".owner.activity.BookingDetail"
-            android:screenOrientation="portrait">
-
-        </activity>
-        <activity
-            android:name=".common.activity.ServiceDetail"
-            android:screenOrientation="portrait">
-
-        </activity>
-        <activity
-            android:name=".user.activity.Services"
-            android:screenOrientation="portrait">
-
-        </activity>
-        <activity
-            android:screenOrientation="portrait"
-            android:name=".user.activity.Testimonials">
-
-        </activity>
+            android:name=".user.activity.UserMain"
+            android:label="@string/title_activity_user_main"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".common.activity.Login"></activity>
     </application>
 
 </manifest>
