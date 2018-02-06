@@ -18,6 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        app:itemBackground="@android:color/transparent"
         app:itemIconTint="@color/colorPrimary"
         app:itemTextColor="@color/dark_gray"
         android:fitsSystemWindows="true"

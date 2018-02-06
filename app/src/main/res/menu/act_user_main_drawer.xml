@@ -6,23 +6,23 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/user_nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_home"
             android:title="@string/home" />
         <item
             android:id="@+id/user_nav_history"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_history"
             android:title="@string/history" />
         <item
             android:id="@+id/user_nav_address_book"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_address_book"
             android:title="@string/address_book" />
         <item
             android:id="@+id/user_nav_notification"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_notification"
             android:title="@string/notification" />
         <item
             android:id="@+id/user_nav_profile"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_profile"
             android:title="@string/profile" />
     </group>
 
@@ -32,19 +32,19 @@
 
         <item
             android:id="@+id/user_nav_testimonial"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_testimonials"
             android:title="@string/testimonial" />
         <item
             android:id="@+id/user_nav_faq"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_faq"
             android:title="@string/faq" />
         <item
             android:id="@+id/user_nav_terms_condition"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_termscondition"
             android:title="@string/term_and_condition" />
         <item
             android:id="@+id/user_nav_about"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_about"
             android:title="@string/about" />
     </group>
 

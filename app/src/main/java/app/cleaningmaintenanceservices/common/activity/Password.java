@@ -1,14 +1,16 @@
 package app.cleaningmaintenanceservices.common.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.gson.Gson;
@@ -22,21 +24,21 @@ import org.json.JSONObject;
 import app.cleaningmaintenanceservices.R;
 import app.cleaningmaintenanceservices.helper.Utils;
 import app.cleaningmaintenanceservices.model.MDUser;
-import app.cleaningmaintenanceservices.owner.activity.OwnerProfile;
 import app.cleaningmaintenanceservices.user.activity.UserHome;
 import app.cleaningmaintenanceservices.user.activity.UserProfile;
 import cz.msebera.android.httpclient.Header;
 
-public class Verification extends AppCompatActivity {
+public class Password extends AppCompatActivity {
 
-    TextView verificationCodeSendText, correctIncorrectText;
-    EditText verificationCodeEditText;
+    EditText password;
     Button submit;
-    String whichLogin, mobile;
+    String mobile, whichLogin;
+    SharedPreferences.Editor editor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_verification);
+        setContentView(R.layout.act_password);
 
         init();
 
@@ -44,42 +46,42 @@ public class Verification extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if(TextUtils.isEmpty(verificationCodeEditText.getText().toString())){
-                            Snackbar.make(findViewById(android.R.id.content), R.string.invalid_code, Snackbar.LENGTH_LONG).show();
+                        if(TextUtils.isEmpty(password.getText().toString())){
+                            Snackbar.make(findViewById(android.R.id.content), R.string.edit_name, Snackbar.LENGTH_LONG).show();
                         }
                         else {
-                            apiVerification();
+                            apiLogin(mobile,password.getText().toString().trim());
                         }
                     }
                 }
         );
     }
 
-    public void init(){
-        verificationCodeSendText = findViewById(R.id.actVerificationCodeSendText);
-        verificationCodeEditText = findViewById(R.id.actVerificationCodeEditText);
-        correctIncorrectText = findViewById(R.id.actVerificationCorrectText);
-        submit = findViewById(R.id.actVerificationCodeSubmit);
+    public void init() {
+        password = findViewById(R.id.actPasswordEditText);
+        submit = findViewById(R.id.actPasswordSubmit);
 
-        if(getIntent().getExtras() != null){
-            whichLogin = getIntent().getStringExtra("whichLogin");
+        editor = PreferenceManager.getDefaultSharedPreferences(this).edit();
+
+        if (getIntent().getExtras() != null) {
             mobile = getIntent().getStringExtra("mobile");
-            verificationCodeSendText.append(" " + mobile);
+            whichLogin = getIntent().getStringExtra("whichLogin");
         }
     }
 
-    public void apiVerification(){
-        final MaterialDialog progressDialog = new MaterialDialog.Builder(Verification.this).content(R.string.please_wait).progress(true, 0).cancelable(false).show();
+    private void apiLogin(String mobile, final String password) {
+
+        final MaterialDialog progressDialog = new MaterialDialog.Builder(Password.this).content(R.string.please_wait).progress(true, 0).cancelable(false).show();
 
         RequestParams params = new RequestParams();
-        params.add("verification_code", verificationCodeEditText.getText().toString());
-
+        params.add("mobile", mobile);
+        params.add("password", password);
+        params.add("fcm_token", "123456");
 
         AsyncHttpClient client = new AsyncHttpClient();
-        client.setTimeout(30000);
+        client.setTimeout(60000);
         client.addHeader("Accept", "application/json");
-        client.addHeader("Authorization", "Bearer " + Utils.token);
-        client.post(Utils.webUrl + "user/verify-phone", params, new TextHttpResponseHandler() {
+        client.post(Utils.webUrl + "user/login", params, new TextHttpResponseHandler() {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
@@ -100,32 +102,29 @@ public class Verification extends AppCompatActivity {
 
                         Utils.user = new Gson().fromJson(obj.getString("data"), MDUser.class);
 
+                        editor.putString("mobile", Utils.user.mobile);
+                        editor.putString("password", password);
+                        editor.putBoolean("isLogin", true);
+                        editor.apply();
+                        //   Utils.pToast(Splash.this, getString(R.string.welcome) + " " + Utils.user.full_name);
 
-                        if(!Utils.user.password){
-                            Intent intent = new Intent(Verification.this, Register.class);
-                            intent.putExtra("whichLogin",whichLogin);
-                            startActivity(intent);
-                            finish();
-                        }
-                        else {
-                            if(Utils.user.user_type.equalsIgnoreCase("client")){
-                                if(whichLogin.equalsIgnoreCase("loginForProfile")){
-                                    startActivity(new Intent(Verification.this, UserProfile.class));
-                                    finish();
-                                }
-                                else {
-                                    startActivity(new Intent(Verification.this, UserHome.class));
-                                }
+
+                        if(Utils.user.user_type.equalsIgnoreCase("client")){
+                            if(whichLogin.equalsIgnoreCase("loginForProfile")){
+                                startActivity(new Intent(Password.this, UserProfile.class));
+                                finish();
                             }
                             else {
-                                startActivity(new Intent(Verification.this, OwnerProfile.class));
+                                startActivity(new Intent(Password.this, UserHome.class));
                             }
-
                         }
-
+                        else {
+                            startActivity(new Intent(Password.this, UserHome.class));
+                        }
                     } else {
-
-                        new MaterialDialog.Builder(Verification.this).title(R.string.alert).content(obj.getString("message")).negativeText(R.string.close).show();
+                        Log.e("Err: Auto Login", responseString);
+                        startActivity(new Intent(Password.this, UserHome.class));
+                        finish();
                     }
 
                 } catch (JSONException e) {
@@ -137,6 +136,8 @@ public class Verification extends AppCompatActivity {
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
 
+                Log.e("Err: Auto Login", responseString);
+                finish();
             }
         });
     }

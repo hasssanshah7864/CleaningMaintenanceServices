@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Cleaning &amp; Maintenance Services</string>
+    <string name="app_name" translatable="false">Cleaning &amp; Maintenance Services</string>
     <string name="title_activity_user_main"></string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -76,4 +76,26 @@
     <string name="edit_phone_msg">Please Enter Phone</string>
     <string name="invalid_phone">Invalid Phone</string>
     <string name="gender">Gender</string>
+    <string name="company_name">Company Name</string>
+    <string name="change_password">Change Password</string>
+    <string name="pending">Pending</string>
+    <string name="confirmed">Confirmed</string>
+    <string name="finished">Finished</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="denied">Denied</string>
+    <string name="login_register">Please Login or Register to Access</string>
+    <string name="required_terms_conditions"><![CDATA[Required Accepting Terms & Conditions]]></string>
+    <string name="invalid_code">Invalid Code</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="password">Password</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_confirm_password">Enter Confirm Password</string>
+    <string name="edit_password_msg">Reset your password</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="edit_password">Edit Password</string>
+    <string name="enter_old_password">Enter Old Password</string>
+    <string name="enter_new_password">Enter New Password</string>
 </resources>

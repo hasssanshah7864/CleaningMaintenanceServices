@@ -1,7 +1,10 @@
 package app.cleaningmaintenanceservices.user.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
@@ -19,8 +22,13 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import app.cleaningmaintenanceservices.R;
+import app.cleaningmaintenanceservices.common.activity.Login;
+import app.cleaningmaintenanceservices.helper.Utils;
+import app.cleaningmaintenanceservices.model.MDFeaturedServices;
+import app.cleaningmaintenanceservices.model.MDTestimonial;
+import app.cleaningmaintenanceservices.user.adapter.ViewPagerAdapter;
 
-public class UserMain extends AppCompatActivity
+public class UserHome extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     ImageView userImage;
@@ -28,8 +36,10 @@ public class UserMain extends AppCompatActivity
     ArrayList<String> viewPagerImages;
     ViewPager viewPager;
     LinearLayout indicatorDotsLinearLayout;
+    ViewPagerAdapter adapter;
     private ImageView[] indicatorDots;
     int imagesCounter = -1;
+    SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +58,44 @@ public class UserMain extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         init();
+
+
+        viewPager.addOnPageChangeListener(
+                new ViewPager.OnPageChangeListener() {
+                    @Override
+                    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+                    }
+
+                    @Override
+                    public void onPageSelected(int position) {
+                        for (int i = 0; i < indicatorDots.length; i++) {
+                            indicatorDots[i].setImageResource(R.drawable.unselected_dot);
+                        }
+                        indicatorDots[position].setImageResource(R.drawable.selected_dot);
+                    }
+
+                    @Override
+                    public void onPageScrollStateChanged(int state) {
+
+                    }
+                }
+        );
+
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if(imagesCounter + 1 == indicatorDots.length){
+                    imagesCounter = -1;
+                    viewPager.setCurrentItem(++imagesCounter);
+                }
+                else {
+                    viewPager.setCurrentItem(++imagesCounter);
+                }
+                handler.postDelayed(this,1500);
+            }
+        },1500);
     }
 
     @Override
@@ -84,7 +132,7 @@ public class UserMain extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
 
         int id = item.getItemId();
-
+        Intent intent;
         switch (id){
             case R.id.user_nav_home:
                 break;
@@ -94,7 +142,7 @@ public class UserMain extends AppCompatActivity
 
             case R.id.user_nav_address_book:
 
-                Intent intent = new Intent(this,AddressBook.class);
+                intent = new Intent(this,AddressBook.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
 
@@ -104,6 +152,19 @@ public class UserMain extends AppCompatActivity
                 break;
 
             case R.id.user_nav_profile:
+
+                if(preferences.getBoolean("isLogin",false)){
+                    intent = new Intent(this, UserProfile.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+                else {
+                    intent = new Intent(this, Login.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.putExtra("whichLogin","loginForProfile");
+                    startActivity(intent);
+                }
+
                 break;
 
             case R.id.user_nav_testimonial:
@@ -129,9 +190,23 @@ public class UserMain extends AppCompatActivity
         username = findViewById(R.id.userNavigationDrawerName);
         userPhone = findViewById(R.id.userNavigationDrawerPhone);
 
+        Utils.loadImg(this, userImage, Utils.user.image, false, false);
+        username.setText(Utils.user.full_name);
+        userPhone.setText(Utils.user.mobile);
+
         viewPager = findViewById(R.id.userMainViewpager);
         indicatorDotsLinearLayout = findViewById(R.id.userMainViewpagerpagerDotsIndicator);
         viewPagerImages = new ArrayList<>();
+
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        for(MDTestimonial testimonial : Utils.settings.top_testimonials){
+            viewPagerImages.add(testimonial.image);
+        }
+        adapter = new ViewPagerAdapter(viewPagerImages,this);
+        viewPager.setAdapter(adapter);
+        setupPagerIndicatorDots();
+
     }
 
     public void setupPagerIndicatorDots(){
@@ -146,5 +221,6 @@ public class UserMain extends AppCompatActivity
             indicatorDotsLinearLayout.addView(indicatorDots[i]);
             indicatorDotsLinearLayout.bringToFront();
         }
+        indicatorDots[0].setImageResource(R.drawable.selected_dot);
     }
 }

@@ -35,6 +35,7 @@ public class AddressBook extends AppCompatActivity {
     AdapterAddress adapter;
     Button addAddress;
 
+    public static boolean needRefresh = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +49,19 @@ public class AddressBook extends AppCompatActivity {
         });
 
         init();
+
+        apiAddresses();
+
+        addAddress.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(AddressBook.this, AddressAdd.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+                    }
+                }
+        );
     }
 
 
@@ -58,6 +72,17 @@ public class AddressBook extends AppCompatActivity {
     }
 
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (needRefresh) {
+
+            apiAddresses();
+            needRefresh = false;
+        }
+    }
 
     private void populateData() {
 
@@ -76,10 +101,6 @@ public class AddressBook extends AppCompatActivity {
                         setResult(Activity.RESULT_OK, returnIntent);
                         finish();
 
-                    } else {
-                        Intent intent = new Intent(AddressBook.this, AddressAdd.class);
-                        intent.putExtra("address", new Gson().toJson(data));
-                        startActivity(intent);
                     }
                 }
 
@@ -88,7 +109,10 @@ public class AddressBook extends AppCompatActivity {
                 }
 
                 if (type == 2){
-                    // Add Code For Edit
+
+                    Intent intent = new Intent(AddressBook.this, AddressAdd.class);
+                    intent.putExtra("address", new Gson().toJson(data));
+                    startActivity(intent);
                 }
 
             }

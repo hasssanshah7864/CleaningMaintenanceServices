@@ -27,14 +27,14 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_220sdp"
-            android:background="@drawable/splash" />
+            android:background="@color/colorPrimary" />
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_200sdp"
+            android:layout_height="@dimen/_300sdp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="@dimen/_70sdp"
+            android:layout_marginBottom="@dimen/_25sdp"
             android:layout_marginLeft="@dimen/_20sdp"
             android:layout_marginRight="@dimen/_20sdp">
 
@@ -75,6 +75,30 @@
                     android:background="@drawable/outline_gray"
                     android:hint="@string/email"
                     android:inputType="text"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:textSize="@dimen/_12sdp" />
+
+                <EditText
+                    android:id="@+id/actRegisterPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:background="@drawable/outline_gray"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:textSize="@dimen/_12sdp" />
+
+                <EditText
+                    android:id="@+id/actRegisterPasswordConfirmed"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:background="@drawable/outline_gray"
+                    android:hint="@string/confirm_password"
+                    android:inputType="textPassword"
                     android:paddingEnd="@dimen/_10sdp"
                     android:paddingStart="@dimen/_10sdp"
                     android:textSize="@dimen/_12sdp" />
@@ -128,7 +152,7 @@
             android:layout_height="@dimen/_35sdp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="@dimen/_55sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
             android:layout_marginLeft="@dimen/_40sdp"
             android:layout_marginRight="@dimen/_40sdp"
             android:background="@drawable/button"

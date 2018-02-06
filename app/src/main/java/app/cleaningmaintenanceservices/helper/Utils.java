@@ -1,14 +1,24 @@
 package app.cleaningmaintenanceservices.helper;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
 import android.widget.ImageView;
 
+import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.squareup.picasso.Picasso;
 
+import java.util.Locale;
+
 import app.cleaningmaintenanceservices.R;
+import app.cleaningmaintenanceservices.common.activity.Login;
+import app.cleaningmaintenanceservices.model.MDSettings;
+import app.cleaningmaintenanceservices.model.MDUser;
 
 /**
  * Created by Hassan on 1/31/2018.
@@ -18,6 +28,11 @@ public class Utils {
 
     public static String webUrl;
     public static String token = "";
+    public static Locale locale = Locale.getDefault();
+    public static String language = "en";
+    public static MDUser user = new MDUser();
+    public static MDSettings settings;
+    public SharedPreferences preferences;
 
     public static void loadImg(Context context, ImageView imageView, String path, boolean wide, boolean fullSize) {
 
@@ -70,5 +85,32 @@ public class Utils {
         }
 
         return state;
+    }
+
+    public static boolean isLoggedIn(final Context c, boolean enablePopUp) {
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(c);
+
+        if(preferences.getBoolean("isLogin",false)){
+            return true;
+        }
+        else if (enablePopUp) {
+
+            new MaterialDialog.Builder(c).title(R.string.denied).content(R.string.login_register)
+                    .positiveText(R.string.login).onPositive(new MaterialDialog.SingleButtonCallback() {
+                @Override
+                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+
+                    c.startActivity(new Intent(c, Login.class));
+
+                }
+            }).negativeText(R.string.close).show();
+
+            return false;
+
+        } else {
+
+            return false;
+        }
     }
 }

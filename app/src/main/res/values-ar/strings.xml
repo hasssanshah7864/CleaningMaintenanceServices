@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name" translatable="false">Cleaning &amp; Maintenance Services</string>
+    <string name="title_activity_user_main"></string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="no_network">لا توجد شبكة</string>
+    <string name="connect_to_net">يرجى الاتصال بالإنترنت.</string>
+    <string name="select_your_service">حدد الخدمة</string>
+    <string name="maintenance">اعمال صيانة</string>
+    <string name="cleaning">تنظيف</string>
+    <string name="unexpected_error">حدث خطأ غير متوقع!</string>
+    <string name="ok">حسنا</string>
+    <string name="next">التالى</string>
+    <string name="terms_conditions"><![CDATA[البنود و الظروف]]></string>
+    <string name="agree_to">توافق على</string>
+    <string name="phone">هاتف</string>
+    <string name="enter_mobile_link">الرجاء إدخال رقم الجوال لربطه مع طلبك</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="verification_code_send">رمز التحقق إرسال إلى </string>
+    <string name="verify_code_below">الرجاء إدخال رمز التحقق أدناه</string>
+    <string name="verification_code">رمز التحقق</string>
+    <string name="submit">خضع</string>
+    <string name="incorrect_number">رقم غير صحيح</string>
+    <string name="register">تسجيل</string>
+    <string name="correct_number">الرقم الصحيح</string>
+    <string name="register_account">تسجيل حسابك</string>
+    <string name="male">الذكر</string>
+    <string name="female">إناثا</string>
+    <string name="select_gender">حدد نوع الجنس</string>
+    <string name="name">اسم</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="logout">الخروج</string>
+    <string name="profile">الملف الشخصي</string>
+    <string name="address_book">دليل العناوين</string>
+    <string name="address">عنوان</string>
+    <string name="add_address">اضف عنوان</string>
+    <string name="please_wait">أرجو الإنتظار</string>
+    <string name="alert">محزر</string>
+    <string name="error_msg">فشل الاتصال مع خادم أو طلب يستغرق الكثير من الوقت! يرجى التحقق من اتصال الإنترنت الخاص بك أو الانتظار للخادم للرد.</string>
+    <string name="close">قريب</string>
+    <string name="enter_address">الرجاء إدخال العنوان أو علامة السحب إلى موقعك.</string>
+    <string name="permission_required">إذن مطلوب</string>
+    <string name="connection_suspended">تم تعليق اتصال الخريطة</string>
+    <string name="connection_failed">أخفق اتصال الخريطة</string>
+    <string name="you">أنت</string>
+    <string name="marked_location">موقع ملحوظ</string>
+    <string name="home">الصفحة الرئيسية</string>
+    <string name="history">التاريخ</string>
+    <string name="notification">إعلام</string>
+    <string name="testimonial">شهادة</string>
+    <string name="faq">التعليمات</string>
+    <string name="term_and_condition">الأحكام والشروط</string>
+    <string name="about">حول</string>
+    <string name="contact">اتصل</string>
+    <string name="select_language">اختار اللغة</string>
+    <string name="ar">عربى</string>
+    <string name="en">الإنجليزية</string>
+    <string name="save_language">احفظ هذه اللغة</string>
+    <string name="continue_">استمر</string>
+    <string name="language">لغة</string>
+    <string name="edit_name">تعديل الاسم</string>
+    <string name="edit_name_msg">من فضلك أدخل إسمك</string>
+    <string name="update">تحديث</string>
+    <string name="cancel">إلغاء</string>
+    <string name="invalid_name">الاسم غير صالح</string>
+    <string name="invalid_email">بريد إلكتروني خاطئ</string>
+    <string name="edit_email">تحرير البريد الإلكتروني</string>
+    <string name="edit_email_msg">رجاءا أدخل بريدك الإلكتروني</string>
+    <string name="edit_gender">تعديل الجنس</string>
+    <string name="select_gender_msg">يرجى تحديد الجنس</string>
+    <string name="edit_phone">تحرير الهاتف</string>
+    <string name="edit_phone_msg">الرجاء إدخال رقم الهاتف</string>
+    <string name="invalid_phone">الهاتف غير صالح</string>
+    <string name="gender">جنس</string>
+    <string name="company_name">اسم الشركة</string>
+    <string name="change_password">تغيير كلمة السر</string>
+    <string name="pending">قيد الانتظار</string>
+    <string name="confirmed">تم تأكيد</string>
+    <string name="finished">تم الانتهاء من</string>
+    <string name="cancelled">ألغيت</string>
+    <string name="denied">رفض</string>
+    <string name="login_register">يرجى الدخول أو التسجيل للوصول</string>
+
+</resources>

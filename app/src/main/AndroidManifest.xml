@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".common.activity.Splash"
+        <activity
+            android:name=".common.activity.Splash"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,36 +20,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".user.activity.UserMain"
+            android:name=".user.activity.UserHome"
             android:label="@string/title_activity_user_main"
             android:theme="@style/AppTheme" />
-
-        <activity android:name=".common.activity.Login"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".common.activity.Verification"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".common.activity.Register"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".user.activity.Profile"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".user.activity.AddressBook"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".user.activity.AddressAdd"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".common.activity.Login"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".common.activity.Verification"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".common.activity.Register"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".user.activity.UserProfile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".user.activity.AddressBook"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".user.activity.AddressAdd"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyClnfbvBJFBbtMJRyLKYoi_Oo-QJ5xEq2Q" />
 
-        <activity android:name=".common.activity.Language"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".common.activity.Language"
+            android:screenOrientation="portrait" />
+        <activity android:name=".owner.activity.OwnerProfile" />
+        <activity android:name=".common.activity.Password"></activity>
     </application>
 
 </manifest>

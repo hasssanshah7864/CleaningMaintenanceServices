@@ -37,7 +37,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_220sdp"
-            android:background="@drawable/splash" />
+            android:background="@color/colorPrimary" />
 
         <android.support.v7.widget.CardView
             android:layout_width="wrap_content"
@@ -46,7 +46,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/_16sdp">
             <ImageView
-                android:id="@+id/actProfileImafe"
+                android:id="@+id/actProfileImage"
                 android:layout_width="@dimen/_120sdp"
                 android:layout_height="@dimen/_120sdp"
                 android:background="@color/colorPrimaryDark"/>
@@ -56,10 +56,10 @@
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_230sdp"
+            android:layout_height="@dimen/_250sdp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="@dimen/_40sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
             android:layout_marginLeft="@dimen/_20sdp"
             android:layout_marginRight="@dimen/_20sdp"
             android:id="@+id/cardView">
@@ -70,43 +70,6 @@
                 android:layout_gravity="center"
                 android:orientation="vertical"
                 android:padding="@dimen/_10sdp">
-
-                <RelativeLayout
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_width="@dimen/_20sdp"
-                        android:layout_height="@dimen/_20sdp"
-                        android:layout_alignParentLeft="true"
-                        android:src="@drawable/ic_profile_green_filled"
-                        android:id="@+id/profileIcon" />
-
-
-                    <TextView
-                        android:id="@+id/actProfileName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="24dp"
-                        android:layout_toEndOf="@+id/profileIcon"
-                        android:text="@string/name"
-                        android:textSize="@dimen/_13sdp" />
-
-                    <ImageButton
-                        android:id="@+id/actProfileNameEdit"
-                        android:layout_width="@dimen/_20sdp"
-                        android:layout_height="@dimen/_20sdp"
-                        android:foreground="?attr/selectableItemBackground"
-                        android:layout_alignParentRight="true"
-                        android:background="@drawable/ic_edit_gray"/>
-                </RelativeLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_1sdp"
-                    android:background="#e7e7e7"
-                    android:layout_marginTop="@dimen/_10sdp"/>
 
 
                 <RelativeLayout
@@ -146,6 +109,47 @@
                     android:layout_height="@dimen/_1sdp"
                     android:background="#e7e7e7"
                     android:layout_marginTop="@dimen/_10sdp"/>
+
+
+                <RelativeLayout
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_alignParentLeft="true"
+                        android:src="@drawable/ic_profile_green_filled"
+                        android:id="@+id/profileIcon" />
+
+
+                    <TextView
+                        android:id="@+id/actProfileName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="24dp"
+                        android:layout_toEndOf="@+id/profileIcon"
+                        android:text="@string/name"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <ImageButton
+                        android:id="@+id/actProfileNameEdit"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/ic_edit_gray"/>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="#e7e7e7"
+                    android:layout_marginTop="@dimen/_10sdp"/>
+
+
+
 
 
                 <RelativeLayout
@@ -219,6 +223,47 @@
 
 
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="#e7e7e7"
+                    android:layout_marginTop="@dimen/_10sdp"/>
+
+                <RelativeLayout
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_alignParentLeft="true"
+                        android:src="@drawable/ic_password"
+                        android:id="@+id/passwordIcon" />
+
+
+                    <TextView
+                        android:id="@+id/actProfilePassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="24dp"
+                        android:layout_toEndOf="@+id/passwordIcon"
+                        android:text="@string/change_password"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <ImageButton
+                        android:id="@+id/actProfilePasswordEdit"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_alignParentRight="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:background="@drawable/ic_edit_gray"/>
+                </RelativeLayout>
+
+
+
+
+
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
@@ -227,10 +272,10 @@
         <Button
             android:id="@+id/actProfileLogout"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_35sdp"
+            android:layout_height="@dimen/_30sdp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
             android:layout_marginLeft="@dimen/_40sdp"
             android:layout_marginRight="@dimen/_40sdp"
             android:background="@drawable/button"
