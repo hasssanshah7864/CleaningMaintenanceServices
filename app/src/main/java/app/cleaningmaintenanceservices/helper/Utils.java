@@ -8,7 +8,14 @@ import android.widget.ImageView;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.squareup.picasso.Picasso;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.TimeZone;
+
 import app.cleaningmaintenanceservices.R;
+import app.cleaningmaintenanceservices.model.MDSettings;
+import app.cleaningmaintenanceservices.model.MDUser;
 
 /**
  * Created by Hassan on 1/31/2018.
@@ -16,7 +23,12 @@ import app.cleaningmaintenanceservices.R;
 
 public class Utils {
 
-    public static String webUrl;
+    public static String webUrl = "https://www.mytechnology.ae/test/cleaners-maintainers/en/api/";
+    public static Locale locale = Locale.getDefault();
+    public static MDUser user = new MDUser();
+    public static boolean isAED = false;
+    public static String token = "";
+    public static MDSettings settings;
 
     public static void loadImg(Context context, ImageView imageView, String path, boolean wide, boolean fullSize) {
 
@@ -53,6 +65,37 @@ public class Utils {
                 }
             }
         }
+    }
+
+
+    public static String formatDate(long timestamp) {
+
+        Calendar date = Calendar.getInstance();
+        date.setTimeInMillis(timestamp * 1000);
+        String month = date.getDisplayName(Calendar.MONTH, Calendar.SHORT, Locale.getDefault());
+        return date.get(Calendar.DAY_OF_MONTH) + " " + month + " " + date.get(Calendar.YEAR);
+    }
+
+    public static String formatTime(long timestamp, boolean small) {
+
+        Calendar date = Calendar.getInstance();
+        date.setTimeInMillis(timestamp * 1000);
+        SimpleDateFormat format = new SimpleDateFormat("h:mm a", locale);
+
+        if (small) {
+            return format.format(date.getTime()) + " (" + TimeZone.getDefault().getDisplayName(false, TimeZone.SHORT) + ")";
+        } else {
+            return format.format(date.getTime()) + " (" + TimeZone.getDefault().getDisplayName() + ")";
+        }
+    }
+
+    public static String formatTime(long timestamp) {
+
+        Calendar date = Calendar.getInstance();
+        date.setTimeInMillis(timestamp * 1000);
+        SimpleDateFormat format = new SimpleDateFormat("h:mm a", locale);
+        return format.format(date.getTime());
+
     }
 
 
