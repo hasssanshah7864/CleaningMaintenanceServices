@@ -69,11 +69,11 @@ public class Services extends AppCompatActivity {
 
                 services = new ArrayList<>(Utils.settings.cleaner_services);
 
-            } /*else if (company_type.equals("servants")) {
+            } else if (company_type.equals("maintenance")) {
 
-                title.setText(R.string.servants);
+                title.setText(R.string.maintenance);
                 services = new ArrayList<>(Utils.settings.servant_services);
-            }*/
+            }
 
             populateData();
 
