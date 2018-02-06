@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/itemBookingHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="@dimen/_8sdp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_8sdp">
+
+            <TextView
+                android:id="@+id/txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/date"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/itemBookingHistoryDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/txt"
+                android:textColor="@color/gray"
+                android:textSize="14sp" />
+
+            <!--<TextView
+                android:id="@+id/txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/itemBookingHistoryDate"
+                android:text="@string/end_date_"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/itemBookingHistoryDate2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/itemBookingHistoryDate"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/txt2"
+                android:textColor="@color/gray"
+                android:textSize="14sp" />-->
+
+            <TextView
+                android:id="@+id/txt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:text="@string/services"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/itemBookingHistoryServices"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt2"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_toEndOf="@+id/txt3"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/itemBookingHistoryStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@color/colorPrimary"
+                android:gravity="center_horizontal"
+                android:minWidth="@dimen/_80sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:paddingEnd="@dimen/_12sdp"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/itemBookingHistoryTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:padding="@dimen/_4sdp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

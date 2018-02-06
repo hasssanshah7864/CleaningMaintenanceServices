@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/actOwnerBookingDetailTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="@dimen/_12sdp"
+            android:text="@string/booking_detail"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18sdp" />
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/arrow_back" />
+
+    </RelativeLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_13sdp"
+            android:layout_marginStart="@dimen/_13sdp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/actOwnerBookingDetailImg"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_90sdp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_profile" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_toEndOf="@+id/actOwnerBookingDetailImg"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/actOwnerBookingDetailTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textSize="@dimen/_15sdp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/actOwnerBookingDetailTxt"
+                        android:text="@string/date"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/actOwnerBookingDetailDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/actOwnerBookingDetailTxt"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_toEndOf="@+id/txt"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp" />
+
+                    <!--<TextView
+                        android:id="@+id/txt2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/actOwnerBookingDetailDate"
+                        android:text="@string/end_date_"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/actOwnerBookingDetailDate2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/actOwnerBookingDetailDate"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_toEndOf="@+id/txt2"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp" />-->
+
+                    <TextView
+                        android:id="@+id/txt3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/actOwnerBookingDetailDate"
+                        android:text="@string/phone"
+                        android:textSize="@dimen/_11sdp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/actOwnerBookingDetailPhone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/actOwnerBookingDetailDate"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:layout_toEndOf="@+id/txt3"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_11sdp" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/requested_service"
+                android:textSize="@dimen/_14sdp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/actOwnerBookingDetailList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:background="@color/gray" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:text="@string/address"
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
+                android:id="@+id/actOwnerBookingDetailAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/_11sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:text="@string/special_instruction"
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
+                android:id="@+id/actOwnerBookingDetailSpecial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/_11sdp" />
+
+            <TextView
+                android:id="@+id/actOwnerBookingDetailAssignedTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:text="@string/assigned_cleaner"
+                android:textSize="@dimen/_14sdp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/actOwnerBookingDetailAssigned"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/_11sdp"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/actOwnerBookingDetailItems"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_toStartOf="@+id/mid"
+                    android:background="@drawable/button"
+                    android:text="@string/booking_items"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+
+                <View
+                    android:id="@+id/mid"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    android:layout_centerHorizontal="true" />
+
+                <Button
+                    android:id="@+id/actOwnerBookingDetailMap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_toEndOf="@+id/mid"
+                    android:background="@drawable/button"
+                    android:text="@string/show_on_map"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_7sdp">
+
+
+                <Button
+                    android:id="@+id/actOwnerBookingDetailAssign"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:layout_toStartOf="@+id/mid2"
+                    android:background="@drawable/button"
+                    android:text="@string/assigned_cleaner"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+
+
+                <View
+                    android:id="@+id/mid2"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    android:layout_centerHorizontal="true" />
+
+                <Button
+                    android:id="@+id/actOwnerBookingDetailCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_toEndOf="@+id/mid2"
+                    android:background="@drawable/button"
+                    android:text="@string/cancel_booking"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/actOwnerBookingDetailClient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@drawable/button"
+                android:text="@string/navigate_to_client"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp" />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

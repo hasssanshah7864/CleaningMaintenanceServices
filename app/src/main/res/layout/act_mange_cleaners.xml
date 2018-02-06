@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="@dimen/_11sdp"
+            android:text="@string/manage_cleaners"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18sdp" />
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/arrow_back" />
+
+        <ImageView
+            android:id="@+id/actOwnerManageEmployeesAdd"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_add_white" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/actOwnerManageEmployeesList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/actOwnerManageEmployeeFinish"
+        android:layout_below="@+id/title_bar" />
+
+    <TextView
+        android:id="@+id/actOwnerManageEmployeeFinish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:padding="@dimen/_8sdp"
+        android:text="@string/finish"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14sdp"
+        android:visibility="gone" />
+</RelativeLayout>

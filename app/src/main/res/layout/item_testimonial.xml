@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:paddingEnd="10dp"
+    android:paddingStart="10dp"
+    android:paddingTop="10dp">
+
+    <com.github.siyamed.shapeimageview.CircularImageView
+        android:id="@+id/itemTestimonialImg"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="10dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/itemTestimonialImg"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:layout_toEndOf="@+id/itemTestimonialImg"
+        android:background="@drawable/bg_testimonials"
+        android:gravity="center_vertical"
+        android:padding="5dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <TextView
+            android:id="@+id/itemTestimonialDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="30dp"
+            android:textSize="16sp" />
+<!--
+        <TextView
+            android:id="@+id/itemTestimonialDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/itemTestimonialDetail"
+            android:layout_marginStart="30dp"
+            android:textColor="@color/gray"
+            android:textSize="12sp" />
+
+            -->
+
+        <TextView
+            android:id="@+id/itemTestimonialTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/itemTestimonialDetail"
+            android:layout_marginStart="30dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</RelativeLayout>

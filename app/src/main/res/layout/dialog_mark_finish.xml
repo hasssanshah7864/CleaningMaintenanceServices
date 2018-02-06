@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp">
+
+
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/mark_finished" />
+
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="22dp"
+        android:layout_below="@+id/txt"
+        android:layout_height="22dp"
+        android:src="@drawable/ic_calender_blue" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt"
+        android:layout_marginStart="5dp"
+        android:textSize="16sp"
+        android:layout_toEndOf="@+id/img"
+        android:text="@string/date" />
+
+    <TextView
+        android:id="@+id/dialogMarkFinishDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/outline_gray"
+        android:hint="@string/select_date"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textSize="16sp" />
+
+    <View
+        android:id="@+id/mid"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/img2"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_below="@+id/dialogMarkFinishDate"
+        android:src="@drawable/ic_time_red" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialogMarkFinishDate"
+        android:layout_marginStart="5dp"
+        android:textSize="16sp"
+        android:layout_toEndOf="@+id/img2"
+        android:text="@string/start_time" />
+
+    <TextView
+        android:id="@+id/dialogMarkFinishStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img2"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_toStartOf="@+id/mid"
+        android:background="@drawable/outline_gray"
+        android:hint="@string/select_time"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/img3"
+        android:layout_width="22dp"
+        android:layout_marginStart="5dp"
+        android:layout_height="22dp"
+        android:layout_below="@+id/dialogMarkFinishDate"
+        android:layout_toEndOf="@+id/mid"
+        android:src="@drawable/ic_time_red" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialogMarkFinishDate"
+        android:textSize="16sp"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/img3"
+        android:text="@string/end_time" />
+
+    <TextView
+        android:id="@+id/dialogMarkFinishEnd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img3"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/mid"
+        android:background="@drawable/outline_gray"
+        android:hint="@string/select_time"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/itemBookingItemCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/dialogMarkFinishEnd"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_toStartOf="@+id/mid"
+        android:background="@drawable/button"
+        android:text="@string/cancel"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/itemBookingItemFinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/dialogMarkFinishEnd"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/mid"
+        android:background="@drawable/button"
+        android:text="@string/mark_finished"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</RelativeLayout>

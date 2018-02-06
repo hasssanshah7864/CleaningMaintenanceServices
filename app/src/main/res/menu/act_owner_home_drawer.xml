@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/manu_top">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/home2x"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/manage_cleaners"
+            android:icon="@drawable/cleaners2x"
+            android:title="@string/manage_cleaners" />
+        <item
+            android:id="@+id/reviews"
+            android:icon="@drawable/reviews2x"
+            android:title="@string/reviews" />
+        <item
+            android:id="@+id/clients"
+            android:icon="@drawable/cleaners2x"
+            android:title="@string/clients" />
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/profile2x"
+            android:title="@string/profile" />
+
+
+    </group>
+
+    <group android:checkableBehavior="none"
+        android:id="@+id/manu_bottom"  >
+
+            <item
+                android:id="@+id/beaprofessional"
+                android:icon="@drawable/proffesional2x"
+                android:title="@string/be_a_professional"
+                 />
+            <item
+                android:id="@+id/faq"
+                android:icon="@drawable/faq2x"
+                android:title="@string/faq" />
+        <item
+            android:id="@+id/term_and_condition"
+            android:icon="@drawable/termsandcondition2x"
+            android:title="@string/term_amp_conditions" />
+
+        <item
+            android:id="@+id/about"
+            android:icon="@drawable/about2x"
+            android:title="@string/about" />
+
+        <item
+            android:id="@+id/contact_us"
+            android:icon="@drawable/call2x"
+            android:title="@string/contact_us" />
+
+    </group>
+
+</menu>

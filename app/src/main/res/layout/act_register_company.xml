@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="@dimen/_12sdp"
+            android:text="@string/company_signup"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_17sdp" />
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/_3sdp"
+            android:src="@drawable/arrow_back" />
+
+    </RelativeLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_17sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/language"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <RadioButton
+                        android:id="@+id/actOwnerCompanyInfoEn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="@string/english"
+                        android:textSize="@dimen/_14sdp" />
+
+                    <RadioButton
+                        android:id="@+id/actOwnerCompanyInfoAr"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/arabic_en"
+                        android:textSize="@dimen/_14sdp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="@string/company_name"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/actOwnerCompanyInfoName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/outline_gray"
+                    android:hint="@string/name"
+                    android:inputType="textCapWords"
+                    android:padding="@dimen/_8sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="@string/company_phone"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/actOwnerCompanyInfoPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/outline_gray"
+                    android:hint="@string/phone"
+                    android:inputType="number"
+                    android:padding="@dimen/_8sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="TextFields" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="@string/company_url"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/actOwnerCompanyUrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/outline_gray"
+                    android:hint="@string/url"
+                    android:padding="@dimen/_8sdp"
+                    android:singleLine="true"
+                    android:inputType="text"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="@string/address"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/actOwnerCompanyInfoEnd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/outline_gray"
+                    android:hint="@string/address"
+                    android:padding="@dimen/_8sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_14sdp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="@string/working_hours"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+                        android:id="@+id/workinghoursfrom"
+                        android:layout_width="@dimen/_135sdp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/outline_gray"
+                        android:hint="@string/start_time"
+                        android:padding="@dimen/_8sdp"
+
+                        android:singleLine="true"
+                        android:textSize="@dimen/_14sdp" />
+
+                    <TextView
+                        android:id="@+id/workinghoursto"
+                        android:layout_width="@dimen/_160sdp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/outline_gray"
+                        android:hint="@string/end_time"
+                        android:padding="@dimen/_8sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_toRightOf="@id/workinghoursfrom"
+                        android:singleLine="true"
+                        android:textSize="@dimen/_14sdp" />
+
+                </RelativeLayout>
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="@string/rate_per_hour"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/actOwnerCompanyInfoRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/outline_gray"
+                    android:hint="@string/price"
+                    android:inputType="number"
+                    android:padding="@dimen/_8sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_14sdp" />
+
+                <!-- <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="10dp"
+                       android:text="@string/currency"
+                       android:textSize="16sp"
+                       android:textStyle="bold" />
+
+                   <RadioGroup
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal"
+                       android:weightSum="2">
+
+                       <RadioButton
+                           android:id="@+id/actOwnerCompanyInfoUSD"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_weight="1"
+                           android:checked="true"
+                           android:text="@string/usd"
+                           android:textSize="16sp" />
+
+                       <RadioButton
+                           android:id="@+id/actOwnerCompanyInfoAED"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_weight="1"
+                           android:text="@string/aed"
+                           android:textSize="16sp" />
+
+                   </RadioGroup>   -->
+
+                <!--<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="@string/company_logo"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/actOwnerCompanyInfoImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/outline_gray"
+                    android:hint="@string/select_image"
+                    android:padding="@dimen/_8sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_14sdp" />-->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="@string/about_company"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/actOwnerCompanyInfoAbout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/outline_gray"
+                    android:hint="@string/about"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:padding="@dimen/_8sdp"
+                    android:textSize="@dimen/_14sdp" />
+
+                <!--<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/company_address"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/actOwnerCompanyInfoAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/outline_gray"
+                    android:padding="@dimen/_10sdp"
+                    android:hint="@string/select_address"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_16sdp" />
+-->
+                <!--<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="@string/map_location"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <fragment
+                    android:id="@+id/map"
+                    android:name="app.cleaningmaintenanceservices.helper.MySupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_200sdp" />-->
+
+                <Button
+                    android:id="@+id/actRegisterSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/button"
+                    android:text="@string/submit"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>
